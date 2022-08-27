@@ -2,3 +2,10 @@ body
 {
     background-size: cover;
 }
+
+canvas
+{
+    background-color: whitesmoke;
+    border-color: black;
+    box-shadow: 15px, 15px, 15px, rgb(red, green, rgb(93, 208, 204));
+}
