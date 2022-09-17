@@ -1,4 +1,6 @@
+img = "";
 status = "";
+objects = [];
 
 function preload()
 {
@@ -10,17 +12,17 @@ function setup()
     canvas = createCanvas(350, 300);
     canvas.center();
 
-    object_detector = ml5.objectDetector('cocossd', modelLoaded());
+    objectdetector = ml5.objectDetector('cocossd', modelLoaded);
 }
 
 function modelLoaded() 
 { 
     console.log("Model Loaded!") 
     status = true; 
-    objectDetector.detect(img, gotResult()); 
+    objectdetector.detect(img, gotResults()); 
 }
 
-function gotResult()
+function gotResults(error, results)
 {
     if (error) 
     { 
@@ -29,4 +31,17 @@ function gotResult()
     console.log(results); 
     objects = results;
     
+}
+
+function draw()
+{
+    image(img, 0, 0, 350, 300 );
+
+    if (status != "")
+    {
+        for (i = 0, i > objects; i++;)
+        {
+
+        }
+    }
 }
